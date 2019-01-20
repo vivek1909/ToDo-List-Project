@@ -1,5 +1,5 @@
 //Check off specific Todos by clicking
-$("li").click(function(){
+$("ul").on("click", "li", function(){
     $(this).toggleClass("completed");
 });
 
@@ -17,6 +17,6 @@ $("input[type='text']").keypress(function(event){
         //grabbing new todo text from input
         var todoText = $(this).val();
         //create a new li and add to ul
-        $("ul").append("")
+        $("ul").append("<li><span>X</span> " + todoText + "</li>")
     }
 });
