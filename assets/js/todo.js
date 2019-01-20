@@ -4,7 +4,7 @@ $("ul").on("click", "li", function(){
 });
 
 //click on X to delete Todo
-$("span").click(function(event){
+$("ul").on("click", "span", function(event){
     $(this).parent().fadeOut(500, function(){
         $(this).remove();
     });
@@ -17,6 +17,10 @@ $("input[type='text']").keypress(function(event){
         //grabbing new todo text from input
         var todoText = $(this).val();
         //create a new li and add to ul
-        $("ul").append("<li><span>X</span> " + todoText + "</li>")
+        $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
     }
+});
+
+$(".fa-edit").click(function(){
+    $("input[type='text']").fadeToggle();
 });
